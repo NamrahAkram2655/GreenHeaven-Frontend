@@ -337,9 +337,8 @@
 
 // export default PlaceOrder;
 
-
 import { useContext, useState } from "react";
-import { CartContext } from "../../context/CartContext";
+import { CartContext } from "../../Context/CartContext";
 import FloatingButtons from "../../Components/FloatingButtons/FloatingButtons";
 import Footer from "../../Components/Footer/Footer";
 import Navbar from "../../Components/Navbar/Navbar";
@@ -487,7 +486,8 @@ const PlaceOrder = () => {
     <div
       className="min-h-screen"
       style={{
-        backgroundImage: "url('https://i.pinimg.com/736x/0a/f9/72/0af9721bc5afb32a9f2a0cdf2fe84fd7.jpg')",
+        backgroundImage:
+          "url('https://i.pinimg.com/736x/0a/f9/72/0af9721bc5afb32a9f2a0cdf2fe84fd7.jpg')",
         backgroundSize: "cover",
         backgroundPosition: "center",
       }}
