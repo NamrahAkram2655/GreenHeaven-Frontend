@@ -1,6 +1,6 @@
 import { useNavigate, useSearchParams } from "react-router-dom";
 import { useContext, useEffect } from "react";
-import { CartContext } from "../../context/CartContext";
+import { CartContext } from "../../Context/CartContext";
 import axios from "axios";
 import { toast } from "react-toastify";
 import Navbar from "../../Components/Navbar/Navbar";
