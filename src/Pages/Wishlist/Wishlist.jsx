@@ -13,7 +13,7 @@ const Wishlist = () => {
 
   // Fetch wishlist from backend
   useEffect(() => {
-    if (user) {
+    if (token) {
       axios
         .get(`${backendUrl}/api/wishlist/${user._id}`, {
           headers: { Authorization: `Bearer ${token}` },
@@ -25,7 +25,7 @@ const Wishlist = () => {
         })
         .catch(() => toast.error("Error fetching wishlist"));
     }
-  }, [user]);
+  }, [token]);
 
   // Remove from Wishlist
   const removeFromWishlist = async (productId) => {
@@ -52,7 +52,7 @@ const Wishlist = () => {
       <div className="min-h-screen bg-gray-100 py-12 px-6">
         <div className="max-w-6xl mx-auto bg-white shadow-xl rounded-lg p-8">
           <h2 className="text-3xl font-bold text-green-800 text-center mb-6">
-          Floral Favorites💚
+            Floral Favorites💚
           </h2>
 
           {wishlist.length === 0 ? (
