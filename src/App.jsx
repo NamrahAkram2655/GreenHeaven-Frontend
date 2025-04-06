@@ -19,7 +19,7 @@ const Verify = lazy(() => import("./Pages/Verify/Verify"));
 const MyProfile = lazy(() => import("./Pages/MyProfle/MyProfile"));
 const Wishlist = lazy(() => import("./Pages/Wishlist/Wishlist"));
 const LandingPage = lazy(() => import("./Pages/LandingPage/LandingPage"));
-const PrivacyPolicy = lazy(() => import("./Pages/PrivacyPolicy/PrivacyPolicy"));
+const PrivacyPolicy = lazy(() => import("./Pages/PrivacyPolicy/privacyPolicy"));
 
 // Contexts & Utilities
 import ScrollToTop from "./Components/ScrollToTop/ScrollToTop";
@@ -31,7 +31,6 @@ import { UserProvider } from "./Context/UserContext";
 import Loader from "./Components/Loader/Loader";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import { ToastContainer } from "react-toastify";
-import ChangePass from "./Pages/ChangePass/ChangePass";
 
 const App = () => {
   return (
