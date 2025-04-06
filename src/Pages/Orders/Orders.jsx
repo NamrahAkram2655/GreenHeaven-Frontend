@@ -1,5 +1,5 @@
 import { useContext, useEffect, useState } from "react";
-import { CartContext } from "../../context/CartContext";
+import { CartContext } from "../../Context/CartContext";
 import Navbar from "../../Components/Navbar/Navbar";
 import Footer from "../../Components/Footer/Footer";
 import FloatingButtons from "../../Components/FloatingButtons/FloatingButtons";
@@ -135,7 +135,8 @@ const MyOrders = () => {
                 No Orders Yet🛒
               </h2>
               <p className="text-gray-600 mt-2">
-                You haven't made any purchases so far. Start browsing and shop today!🌱
+                You haven't made any purchases so far. Start browsing and shop
+                today!🌱
               </p>
               <button className="mt-4 px-6 py-2 bg-green-600 text-white text-sm font-medium rounded-full hover:bg-green-700">
                 Order Now
