@@ -1,20 +1,20 @@
 import { useState } from "react";
 import axios from "axios";
 import "./ResetPassword.css";
-
+const backendUrl = import.meta.env.VITE_BACKEND_URL;
 const ResetPassword = () => {
   const [emailOrPhone, setEmailOrPhone] = useState(""); // For entering email or phone
   const [resetToken, setResetToken] = useState(""); // For storing the reset token
   const [newPassword, setNewPassword] = useState(""); // For storing the new password
   const [isResetting, setIsResetting] = useState(false); // For preventing double submits
-  
+
   // Send the reset code to the user
   const handleSendCode = async (e) => {
     e.preventDefault(); // Prevent form reload
 
     try {
       const res = await axios.post(
-        "http://localhost:5000/api/user/reset/reset-password-request",
+        `${backendUrl}/api/user/reset/reset-password-request`,
         { emailOrPhone }
       );
       alert(res.data.message); // Show success message
@@ -30,7 +30,7 @@ const ResetPassword = () => {
     try {
       setIsResetting(true);
       const res = await axios.post(
-        `http://localhost:5000/api/user/reset/reset-password/${resetToken}`,
+        `${backendUrl}/api/user/reset/reset-password/${resetToken}`,
         { newPassword }
       );
       alert(res.data.message); // Show success message

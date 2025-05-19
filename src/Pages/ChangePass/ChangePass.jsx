@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { useParams } from "react-router-dom";
 import axios from "axios";
-
+const backendUrl = import.meta.env.VITE_BACKEND_URL;
 const ChangePass = () => {
   const { resetToken } = useParams(); // Get reset token from URL
   const [newPassword, setNewPassword] = useState("");
@@ -19,7 +19,7 @@ const ChangePass = () => {
 
     try {
       const res = await axios.post(
-        `http://localhost:5000/api/user/reset/reset-password/${resetToken}`,
+        `${backendUrl}/api/user/reset/reset-password/${resetToken}`,
         { newPassword },
         {
           headers: {

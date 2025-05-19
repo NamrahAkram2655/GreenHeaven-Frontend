@@ -6,7 +6,7 @@ const UserContext = createContext();
 const UserProvider = ({ children }) => {
 
   const [user, setUser] = useState(null);
-  const backendUrl = "http://localhost:5000";
+  const backendUrl = import.meta.env.VITE_BACKEND_URL;
   const token = localStorage.getItem("token");
 
   useEffect(() => {
@@ -30,4 +30,4 @@ const UserProvider = ({ children }) => {
   return <UserContext.Provider value={{ user, setUser, backendUrl, token }}>{children}</UserContext.Provider>;
 };
 
-export {UserContext, UserProvider}
+export { UserContext, UserProvider }
