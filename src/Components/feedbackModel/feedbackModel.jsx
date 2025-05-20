@@ -30,19 +30,19 @@
 //         message: message, // Feedback message
 //         rating: rating, // Rating
 //       },
-    
+
 //       {
 //         headers: { Authorization: `Bearer ${token}` }, // Include token in headers
 //       }
 //     );
 
 //       if (response.data.success) {
-        
+
 //         toast.success("Thank you for your feedback!");
 //         setFeedbackOpen(false); 
 
 //       } else {
-        
+
 //         toast.error(response.data.message || "Failed to submit feedback.");
 //       }
 //     } catch (error) {
@@ -107,7 +107,7 @@ import { FaTimes } from "react-icons/fa";
 import { UserContext } from "../../Context/UserContext"; // ✅ Import UserContext
 import { toast } from "react-toastify";
 
-const backendUrl = "http://localhost:5000/api/feedback/add"; // ✅ Backend API
+const backendUrl = import.meta.env.VITE_BACKEND_URL;
 
 const FeedbackModal = ({ setFeedbackOpen }) => {
   const { user } = useContext(UserContext);

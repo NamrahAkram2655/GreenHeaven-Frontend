@@ -114,7 +114,7 @@ import axios from "axios";
 import { FaPaperPlane, FaTimes, FaRobot } from "react-icons/fa";
 import { motion } from "framer-motion";
 
-const backendUrl = "http://localhost:5000/api/chatbot/chat"; // ✅ Fixed API endpoint
+const backendUrl = import.meta.env.VITE_BACKEND_URL;
 
 const ChatBot = ({ setChatOpen }) => {
   const [messages, setMessages] = useState([]);
@@ -170,7 +170,7 @@ const ChatBot = ({ setChatOpen }) => {
         initial={{ scale: 0.8 }}
         animate={{ scale: 1 }}
         transition={{ duration: 0.3 }}
-        style={{   background: "linear-gradient(to bottom, #4caf50, #ffffff)" }}
+        style={{ background: "linear-gradient(to bottom, #4caf50, #ffffff)" }}
       >
         {/* Chat Header */}
         <div className="flex justify-center items-center bg-green-700 text-white text-lg font-semibold p-3 rounded-t-lg">
@@ -189,11 +189,10 @@ const ChatBot = ({ setChatOpen }) => {
           {messages.map((msg, index) => (
             <div
               key={index}
-              className={`p-3 rounded-lg font-semibold text-sm ${
-                msg.role === "user"
-                  ? "bg-green-100 self-end"
-                  : "bg-white self-start"
-              }`}
+              className={`p-3 rounded-lg font-semibold text-sm ${msg.role === "user"
+                ? "bg-green-100 self-end"
+                : "bg-white self-start"
+                }`}
             >
               {msg.content}
             </div>
