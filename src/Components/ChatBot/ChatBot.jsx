@@ -139,6 +139,7 @@ const ChatBot = ({ setChatOpen }) => {
 
     try {
       const response = await axios.post(`${backendUrl}/api/chatbot/chat`, { message: userInput });
+
       const botMessage = { role: "bot", content: response.data.reply };
       setMessages((prevMessages) => [...prevMessages, botMessage]);
     } catch (error) {
